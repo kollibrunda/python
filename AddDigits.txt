@@ -1,0 +1,13 @@
+class Solution(object):
+    def addDigits(self, num):
+
+        while num>9:p,
+            temp = 0
+            while num>0:
+                temp+=num%10
+                num = num//10
+            num = temp
+        return num
+num=input()
+solution = Solution()
+print(solution.twoSum(num))
