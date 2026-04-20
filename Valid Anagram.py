@@ -1,0 +1,21 @@
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        if len(s)!=len(t):
+            return False
+        c=[0]*26
+        for char in s:
+            c[ord(char)-ord('a')]+=1
+        for char in t:
+            if c[ord(char)-ord('a')]==0:
+                return False
+            c[ord(char)-ord('a')]-=1
+        return True
+s=input("enter your s string:").lower()
+t=input("enter your t string:").lower()
+solution=Solution()
+print(solution.isAnagram(s,t))
